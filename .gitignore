@@ -1,0 +1,53 @@
+# Node / Package managers
+node_modules/
+.pnpm-store/
+.npm/
+.yarn/
+.yarn-cache/
+yarn-error.log
+package-lock.json
+pnpm-lock.yaml
+
+# Build output
+/dist/
+/build/
+/out/
+.esbuild/
+.tmp/
+.temp/
+
+# Vite / Cache
+.vite/
+.cache/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Editor/OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.orig
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.iml
+
+# Coverage / Tests
+coverage/
+*.lcov
+
+# Misc
+*.local
+*.tgz
+*.zip
+*.tar

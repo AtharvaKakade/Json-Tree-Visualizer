@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light dark;
+}
+
+html, body, #root { height: 100%; }
+
+/* THEME VARIABLES */
+:root[data-theme="light"] {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --card-bg: #ffffff;
+  --muted-text: #6b7280;
+  --edge-label: #334155;
+  --border-color: #e5e5e5;
+  --header-bg: #f9f9f9;
+  --scrollbar-track: #f9f9f9;
+  --scrollbar-thumb: #c1c1c1;
+  --node-border-color: #dddddd;
+}
+
+:root[data-theme="dark"] {
+  --bg-color: #0d1117;
+  --text-color: #f0f0f0;
+  --card-bg: #161b22;
+  --muted-text: #9aa4b2;
+  --edge-label: #cbd5e1;
+  --border-color: #30363d;
+  --header-bg: #161b22;
+  --scrollbar-track: #161b22;
+  --scrollbar-thumb: #30363d;
+  --node-border-color: #444444;
+}
+
+.rf-node .label {
+  @apply font-medium;
+}
+
+.btn {
+  @apply inline-flex items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium shadow-sm transition-colors;
+}
+.btn-primary {
+  @apply bg-indigo-600 text-white hover:bg-indigo-700;
+}
+.btn-secondary { @apply text-sm; background-color: var(--border-color); color: var(--text-color); }
+.input { @apply w-full rounded-md px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500; background-color: var(--card-bg); color: var(--text-color); border: 1px solid var(--border-color); }
+.label-sm { @apply text-xs font-medium; color: var(--muted-text); }
+
+/* Node color rings (explicit colors to avoid config dependency) */
+.node-object { border-width: 2px; border-color: #6366F1; }
+.node-array { border-width: 2px; border-color: #10B981; }
+.node-primitive { border-width: 2px; border-color: #F59E0B; }
+.node-highlight { box-shadow: 0 0 0 4px #F43F5E; }
+
+/* Subtle hover glow on nodes */
+.rf-node:hover .react-flow__node-default,
+.rf-node:hover { box-shadow: 0 0 0 2px rgba(99,102,241,0.4); }
+
+/* Edge label polish for dark theme */
+.react-flow__edge-textbg {
+  fill: rgba(30,41,59,0.85);
+  stroke: #475569;
+}
+.react-flow__edge-text { fill: var(--edge-label); }
+
+/* App-level theme using CSS variables */
+.app-root { background-color: var(--bg-color); color: var(--text-color); }
+.app-node { background-color: var(--card-bg); color: var(--text-color); }
+
+/* Consistent borders */
+.border-theme { border-color: var(--border-color) !important; }
+
+/* Node border color softened for theme */
+.node-object, .node-array, .node-primitive { border-width: 2px; border-color: var(--node-border-color); }
+
+/* Scrollbar styling - WebKit */
+*::-webkit-scrollbar { width: 12px; height: 12px; }
+*::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+*::-webkit-scrollbar-thumb { background-color: var(--scrollbar-thumb); border-radius: 6px; border: 3px solid var(--scrollbar-track); }
+
+/* Scrollbar styling - Firefox */
+* { scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track); scrollbar-width: thin; }
+
+
