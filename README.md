@@ -105,6 +105,7 @@ src/
 ├── context/          # Theme & App state context
 ├── utils/            # JSON parsing, search logic, path utilities
 └── main.jsx          # Root entry point
+```
 ---
 
 ## 👨‍💻 Author & License
