@@ -30,24 +30,3 @@ yarn-error.log*
 .env
 .env.*
 !.env.example
-
-# Editor/OS
-.DS_Store
-Thumbs.db
-*.swp
-*.swo
-*.orig
-.idea/
-.vscode/*
-!.vscode/extensions.json
-*.iml
-
-# Coverage / Tests
-coverage/
-*.lcov
-
-# Misc
-*.local
-*.tgz
-*.zip
-*.tar
